@@ -4,6 +4,9 @@ import { PASSWORD_STRENGTH_REGEX } from "../../../Utils/validations";
 import { ButtonsContainer, InputsContainer, FormContainer, ErrorMsg } from "./LoginPage.styles"
 import { Input } from "../../../StyledComponents/Input";
 import { Button } from "../../../StyledComponents/Button";
+import db from '../../../Utils/firebase';
+import 'firebase/firestore';
+
 
 export default function ImageInput() {
   const {
@@ -12,8 +15,24 @@ export default function ImageInput() {
     formState: { errors },
   } = useForm();
 
-  const onFormSubmit = (data) => {
-    console.log(data);
+  const onFormSubmit = async (data) => {
+      const snapshot = await db.collection('users').where('username', '==', data.name).get()
+      const docs = snapshot.docs.map(doc => doc.data())
+      console.log(docs)
+      if (docs.length <= 0) {
+        console.log("User not founded")
+      }
+      else {
+        if (docs[0].password !== data.password){
+          console.log("Incorrect Passowrd")
+        }
+        else if (docs[0].code !== data.code) {
+          console.log("Incorrect Code")
+        }
+        else {
+          console.log("User Loged");
+        }
+      }
   };
 
   return (
@@ -36,6 +55,7 @@ export default function ImageInput() {
       <label align="left">Código de Seguridad
       <Input
             placeholder={"Código de Seguridad"}
+            type="password"
             {...register("code", {
               required: "Código de Seguridad requerido"
             })}
