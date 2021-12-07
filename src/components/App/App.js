@@ -1,9 +1,9 @@
-import ImageInput from "../ImageInput/ImageInput";
+import Pages from "./LoginPage/LoginPage.page";
 
 function App() {
   return (
     <div className="App">
-      <ImageInput />
+      <Pages />
     </div>
   );
 }
