@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FieldsContainer } from "../../../StyledComponents/FieldsContainer";
+import { FieldsContainer } from "../../StyledComponents/FieldsContainer";
 
 export const FormContainer = styled.form`
   flex: 1;

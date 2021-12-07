@@ -1,15 +1,16 @@
 import { useForm } from "react-hook-form";
-// import { useNavigate } from "react-router";
-import { PASSWORD_STRENGTH_REGEX } from "../../../Utils/validations";
-import { ErrorMsg, FieldsContainer } from "../../../StyledComponents/FieldsContainer";
+import { useNavigate } from "react-router";
+import { PASSWORD_STRENGTH_REGEX } from "../../Utils/validations";
+import { ErrorMsg, FieldsContainer } from "../../StyledComponents/FieldsContainer";
 import { ButtonsContainer, FormContainer } from "./RegisterPage.styles"
-import { Input } from "../../../StyledComponents/Input";
-import { Button } from "../../../StyledComponents/Button";
-import db from '../../../Utils/firebase';
+import { Input } from "../../StyledComponents/Input";
+import { Button } from "../../StyledComponents/Button";
+import db from '../../Utils/firebase';
 import 'firebase/firestore';
 
 export default function NewAdmin() {
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -119,7 +120,7 @@ export default function NewAdmin() {
       <ButtonsContainer>
         <br></br>
         <Button type="submit">Registrarse</Button>
-        <Button type="button" /*onClick={() => navigate("/")}*/>
+        <Button type="button" onClick={() => navigate("/")}>
               Cancelar
         </Button>
       </ButtonsContainer>

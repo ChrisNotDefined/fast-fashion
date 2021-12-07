@@ -22,8 +22,8 @@ export const ErrorMsg = styled.span`
   margin-top: 0.4em;
   font-weight: normal;
   font-size: 0.8em;
-  background-color: #BB0750;
-  color: #73b9fc;
+  background-color: #c93340;
+  color: #fd93ae;
   padding: 0.4em;
   border-radius: 0.4em;
 `;
