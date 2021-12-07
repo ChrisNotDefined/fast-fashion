@@ -7,7 +7,7 @@ export const FieldsContainer = styled.div`
   gap: 1em;
   margin-bottom: 1em;
   > label {
-    color: white;
+    color: #DE1D8F;
     font-weight: bold;
     display: flex;
     flex-direction: column;
