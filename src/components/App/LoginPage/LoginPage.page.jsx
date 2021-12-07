@@ -1,5 +1,6 @@
 import { Img } from "./LoginPage.styles";
 import { useForm } from "react-hook-form";
+// import { useNavigate } from "react-router";
 import { PASSWORD_STRENGTH_REGEX } from "../../../Utils/validations";
 import { ButtonsContainer, InputsContainer, FormContainer, ErrorMsg } from "./LoginPage.styles"
 import { Input } from "../../../StyledComponents/Input";
@@ -9,6 +10,7 @@ import 'firebase/firestore';
 
 
 export default function ImageInput() {
+  //const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -79,6 +81,9 @@ export default function ImageInput() {
       </InputsContainer>
       <ButtonsContainer>
         <Button type="submit">Iniciar Sesión</Button>
+        <Button type="button" /*onClick={() => navigate("new-user")} */>
+              Registrar usuario
+        </Button>
       </ButtonsContainer>
      </div>
     </FormContainer>

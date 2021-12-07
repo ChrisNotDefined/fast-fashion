@@ -1,11 +1,15 @@
 import { useForm } from "react-hook-form";
+// import { useNavigate } from "react-router";
 import { PASSWORD_STRENGTH_REGEX } from "../../../Utils/validations";
 import { ErrorMsg, FieldsContainer } from "../../../StyledComponents/FieldsContainer";
 import { ButtonsContainer, FormContainer } from "./RegisterPage.styles"
 import { Input } from "../../../StyledComponents/Input";
 import { Button } from "../../../StyledComponents/Button";
+import db from '../../../Utils/firebase';
+import 'firebase/firestore';
 
 export default function NewAdmin() {
+  //const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -17,7 +21,19 @@ export default function NewAdmin() {
   const [pwd, rpwd] = watch(["password", "repPass"]);
 
   const onFormSubmit = (data) => {
-    console.log(data);
+    
+    const newUser = {
+      username: data.name,
+      job: data.job,
+      team: data.team,
+      sucursal: data.sucursal,
+      code: data.code,
+      password: data.password
+    }
+
+    db.collection("users").doc().set(newUser).then(() => {
+      console.log("Se registro con exito el usuario");
+  });
   };
 
   return (
@@ -63,6 +79,7 @@ export default function NewAdmin() {
       <label align="left">Código de Seguridad
       <Input
             placeholder={"Código de Seguridad"}
+            type="password"
             {...register("code", {
               required: "Código de Seguridad requerido"
             })}
@@ -102,6 +119,9 @@ export default function NewAdmin() {
       <ButtonsContainer>
         <br></br>
         <Button type="submit">Registrarse</Button>
+        <Button type="button" /*onClick={() => navigate("/")}*/>
+              Cancelar
+        </Button>
       </ButtonsContainer>
     </FormContainer>
   );
