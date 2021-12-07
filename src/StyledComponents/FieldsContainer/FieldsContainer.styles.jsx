@@ -7,7 +7,7 @@ export const FieldsContainer = styled.div`
   gap: 1em;
   margin-bottom: 1em;
   > label {
-    color: white;
+    color: #DE1D8F;
     font-weight: bold;
     display: flex;
     flex-direction: column;
@@ -22,8 +22,8 @@ export const ErrorMsg = styled.span`
   margin-top: 0.4em;
   font-weight: normal;
   font-size: 0.8em;
-  background-color: #BB0750;
-  color: #73b9fc;
+  background-color: #ffd4ed;
+  color: #9c27b0;
   padding: 0.4em;
   border-radius: 0.4em;
 `;
