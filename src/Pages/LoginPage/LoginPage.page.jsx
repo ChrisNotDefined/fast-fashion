@@ -26,7 +26,6 @@ export default function ImageInput() {
     try {
       const snapshot = await db.collection("users").where("username", "==", data.name).get();
       const docs = snapshot.docs.map((doc) => doc.data());
-      console.log(docs);
       if (docs.length <= 0) {
         console.log("User not founded");
       } else {
