@@ -2,11 +2,13 @@ import { Img } from "./LoginPage.styles";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import { PASSWORD_STRENGTH_REGEX } from "../../Utils/validations";
-import { ButtonsContainer, InputsContainer, FormContainer, ErrorMsg } from "./LoginPage.styles";
+import { ButtonsContainer, InputsContainer, FormContainer } from "./LoginPage.styles";
+
 import { Input } from "../../StyledComponents/Input";
 import { Button } from "../../StyledComponents/Button";
 import db from "../../Utils/firebase";
 import "firebase/firestore";
+import { ErrorMsg } from "../../StyledComponents/FieldsContainer";
 
 export default function ImageInput() {
   const navigate = useNavigate();

@@ -48,16 +48,6 @@ export const InputsContainer = styled.div`
   }
 `;
 
-export const ErrorMsg = styled.span`
-  margin-top: 0.4em;
-  font-weight: normal;
-  font-size: 0.8em;
-  background-color: #112556AA;
-  color: #73b9fc;
-  padding: 0.4em;
-  border-radius: 0.4em;
-`;
-
 export const FormContainer = styled.form`
   flex: 1;
   display: flex;
